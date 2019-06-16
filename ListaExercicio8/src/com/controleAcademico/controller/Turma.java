@@ -12,6 +12,10 @@ public class Turma {
 	private Professor professor;
 	private int CapacidadeTurma;
 	
+	public Turma() {
+		
+	}
+	
 	public int getId() {
 		return id;
 	}
@@ -35,6 +39,12 @@ public class Turma {
 	}
 	public void setCapacidadeTurma(int capacidadeTurma) {
 		CapacidadeTurma = capacidadeTurma;
+	}
+
+	@Override
+	public String toString() {
+		return "Turma [id=" + id + ", disciplina=" + disciplina + ", professor=" + professor + ", CapacidadeTurma="
+				+ CapacidadeTurma + "]";
 	}
 	
 

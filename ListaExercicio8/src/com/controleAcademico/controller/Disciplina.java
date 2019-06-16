@@ -10,6 +10,10 @@ public class Disciplina {
 	private String nome;
 	private String ementa;
 	
+	public Disciplina() {
+		
+	}
+	
 	public int getId() {
 		return id;
 	}
@@ -27,6 +31,11 @@ public class Disciplina {
 	}
 	public void setEmenta(String ementa) {
 		this.ementa = ementa;
+	}
+
+	@Override
+	public String toString() {
+		return "Disciplina [id=" + id + ", nome=" + nome + ", ementa=" + ementa + "]";
 	}
 	
 	

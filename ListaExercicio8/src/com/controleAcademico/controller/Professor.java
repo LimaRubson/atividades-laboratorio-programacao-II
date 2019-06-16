@@ -1,5 +1,7 @@
 package com.controleAcademico.controller;
 
+import java.util.Date;
+
 /*
 
    * A classe professor possui os atributos: id (int), nome (String), cargo (String), data de nascimento
@@ -12,9 +14,13 @@ public class Professor {
 	private int id;
 	private String nome;
 	private String cargo;
-	private java.util.Date dataNascimento;
+	private Date dataNascimento;
 	private String nomeUsuario;
 	private String senha;
+	
+	public Professor(int date) {
+		dataNascimento = new Date(date);
+	}
 	
 	public int getId() {
 		return id;
@@ -34,10 +40,10 @@ public class Professor {
 	public void setCargo(String cargo) {
 		this.cargo = cargo;
 	}
-	public java.util.Date getDataNascimento() {
+	public Date getDataNascimento() {
 		return dataNascimento;
 	}
-	public void setDataNascimento(java.util.Date dataNascimento) {
+	public void setDataNascimento(Date dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
 	public String getNomeUsuario() {
@@ -52,5 +58,12 @@ public class Professor {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
+
+	@Override
+	public String toString() {
+		return "Professor [id=" + id + ", nome=" + nome + ", cargo=" + cargo + ", dataNascimento=" + dataNascimento
+				+ ", nomeUsuario=" + nomeUsuario + ", senha=" + senha + "]";
+	}
+	
 
 }

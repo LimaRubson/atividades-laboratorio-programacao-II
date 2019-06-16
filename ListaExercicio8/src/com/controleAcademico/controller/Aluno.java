@@ -1,5 +1,7 @@
 package com.controleAcademico.controller;
 
+import java.util.Date;
+
 /*
    *A classe aluno possui os atributos: id (int), nome (String), data de nascimento (java.util.Date), período (int), 
     nome de usuário (String) e senha (String).  
@@ -9,10 +11,14 @@ public class Aluno {
 	
 	private int id;
 	private String nome;
-	private java.util.Date DataNascimento;
+	private Date dataNascimento;
 	private int periodo;
 	private String nomeUsuario;
 	private String senha;
+	
+	public Aluno(int date) {
+		this.dataNascimento = new Date(date);
+	}
 	
 	public int getId() {
 		return id;
@@ -26,11 +32,11 @@ public class Aluno {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public java.util.Date getDataNascimento() {
-		return DataNascimento;
+	public Date getDataNascimento() {
+		return this.dataNascimento;
 	}
-	public void setDataNascimento(java.util.Date dataNascimento) {
-		DataNascimento = dataNascimento;
+	public void setDataNascimento(Date dataNascimento) {
+		this.dataNascimento = dataNascimento;
 	}
 	public int getPeriodo() {
 		return periodo;
