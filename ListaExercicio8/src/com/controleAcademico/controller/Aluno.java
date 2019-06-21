@@ -56,5 +56,11 @@ public class Aluno {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
+
+	@Override
+	public String toString() {
+		return "Aluno [id=" + id + ", nome=" + nome + ", dataNascimento=" + dataNascimento + ", periodo=" + periodo
+				+ ", nomeUsuario=" + nomeUsuario + ", senha=" + senha + "]";
+	}
 	
 }

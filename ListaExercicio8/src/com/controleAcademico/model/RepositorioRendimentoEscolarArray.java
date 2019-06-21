@@ -30,9 +30,9 @@ public class RepositorioRendimentoEscolarArray implements RepositorioRendimentoE
 	}
 
 	@Override
-	public RendimentoEscolar procurar(String nomeRendimento) {
+	public RendimentoEscolar procurar(int idAluno) {
 		for(int i = 0; i < this.indice; i++) {
-			if(this.rendimentos[i].getAluno().getNome() == nomeRendimento) {
+			if(this.rendimentos[i].getAluno().getId() == idAluno) {
 				return this.rendimentos[i];
 			}
 		}

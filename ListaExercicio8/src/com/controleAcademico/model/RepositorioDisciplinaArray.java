@@ -16,7 +16,7 @@ public class RepositorioDisciplinaArray implements RepositorioDisciplina {
 	@Override
 	public void inserir(Disciplina disciplina) {
 		this.disciplinas[this.indice] = disciplina;
-		this.indice++;
+		this.indice = this.indice + 1;
 	}
 
 	@Override

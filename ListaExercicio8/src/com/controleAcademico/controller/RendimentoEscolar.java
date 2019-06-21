@@ -1,5 +1,7 @@
 package com.controleAcademico.controller;
 
+import java.util.Arrays;
+
 /*
  
     *A classe rendimento escolar possui os atributos turma (Turma), aluno (Aluno), nota 1a prova (int), nota 2a prova (int), trabalhos (array de String
@@ -15,6 +17,14 @@ public class RendimentoEscolar {
 	private int notaVA2;
 	private String[] trabalhos;
 	private int[] notasTrabalhos;
+	private int indiceTrabalhos, indiceNotas;	
+	
+	public RendimentoEscolar() {
+		this.trabalhos = new String[4];
+		this.notasTrabalhos = new int[4];
+		this.indiceTrabalhos = 0;
+		this.indiceNotas = 0;
+	}
 	
 	public Turma getTurma() {
 		return turma;
@@ -43,14 +53,24 @@ public class RendimentoEscolar {
 	public String[] getTrabalhos() {
 		return trabalhos;
 	}
-	public void setTrabalhos(String[] trabalhos) {
-		this.trabalhos = trabalhos;
+	public void setTrabalhos(String trabalhos) {
+		this.trabalhos[this.indiceTrabalhos] = trabalhos;
+		this.indiceTrabalhos++;
 	}
 	public int[] getNotasTrabalhos() {
 		return notasTrabalhos;
 	}
-	public void setNotasTrabalhos(int[] notasTrabalhos) {
-		this.notasTrabalhos = notasTrabalhos;
+	public void setNotasTrabalhos(int notasTrabalhos) {
+		this.notasTrabalhos[this.indiceNotas] = notasTrabalhos;
+		this.indiceNotas++;
+	}
+
+	@Override
+	public String toString() {
+		return "RendimentoEscolar [turma=" + turma + ", aluno=" + aluno + ", notaVA1=" + notaVA1 + ", notaVA2="
+				+ notaVA2 + ", trabalhos=" + Arrays.toString(trabalhos) + ", notasTrabalhos="
+				+ Arrays.toString(notasTrabalhos) + ", indiceTrabalhos=" + indiceTrabalhos + ", indiceNotas="
+				+ indiceNotas + "]";
 	}
 
 }

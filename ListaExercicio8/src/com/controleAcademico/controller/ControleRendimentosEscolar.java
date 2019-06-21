@@ -2,6 +2,7 @@ package com.controleAcademico.controller;
 
 import com.controleAcademico.model.RepositorioRendimentoEscolar;
 import com.controleAcademico.model.RepositorioRendimentoEscolarArray;
+import com.controleAcademico.util.RendimentoEscolarInexistenteException;
 
 public class ControleRendimentosEscolar {
 	
@@ -16,11 +17,15 @@ public class ControleRendimentosEscolar {
 		this.rendimentos.remover(nomeRendimento);
 	}
 
-	public RendimentoEscolar procurar(String nomeRendimento) {
-		if(this.rendimentos.procurar(nomeRendimento) != null) {
-			return this.rendimentos.procurar(nomeRendimento);	
+	public RendimentoEscolar procurar(int idAluno) throws RendimentoEscolarInexistenteException {
+		if(this.rendimentos.procurar(idAluno) != null) {
+			return this.rendimentos.procurar(idAluno);	
+		} else {
+			RendimentoEscolarInexistenteException e;
+			e = new RendimentoEscolarInexistenteException(idAluno);
+			
+			throw e;
 		}
-		return null;
 	}
 
 	public void atualizar(RendimentoEscolar rendimento) {

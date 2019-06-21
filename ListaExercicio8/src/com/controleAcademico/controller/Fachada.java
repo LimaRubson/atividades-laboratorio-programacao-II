@@ -3,6 +3,7 @@ package com.controleAcademico.controller;
 import com.controleAcademico.util.AlunoInexistenteException;
 import com.controleAcademico.util.DisciplinaInexistenteException;
 import com.controleAcademico.util.ProfessorInexistenteException;
+import com.controleAcademico.util.RendimentoEscolarInexistenteException;
 import com.controleAcademico.util.TurmaInexistenteException;
 
 public class Fachada {
@@ -88,8 +89,8 @@ public class Fachada {
 		this.rendimentos.remover(nomeRendimento);
 	}
 
-	public RendimentoEscolar procurarRendimento(String nomeRendimento) {
-		return this.rendimentos.procurar(nomeRendimento);	
+	public RendimentoEscolar procurarRendimento(int idAluno) throws RendimentoEscolarInexistenteException {
+		return this.rendimentos.procurar(idAluno);	
 	}
 
 	public void atualizarRendimento(RendimentoEscolar rendimento) {

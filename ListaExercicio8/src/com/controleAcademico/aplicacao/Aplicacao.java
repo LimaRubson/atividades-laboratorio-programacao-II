@@ -6,14 +6,16 @@ import com.controleAcademico.controller.Aluno;
 import com.controleAcademico.controller.Disciplina;
 import com.controleAcademico.controller.Fachada;
 import com.controleAcademico.controller.Professor;
+import com.controleAcademico.controller.RendimentoEscolar;
 import com.controleAcademico.controller.Turma;
+import com.controleAcademico.model.RepositorioDisciplinaArray;
 import com.controleAcademico.util.DisciplinaInexistenteException;
+import com.controleAcademico.util.RendimentoEscolarInexistenteException;
 import com.controleAcademico.util.TurmaInexistenteException;
 
 public class Aplicacao {
 
 	public static void main(String[] args) {
-		
 		Disciplina disciplina1 = new Disciplina();
 		Disciplina disciplina2 = new Disciplina();
 		Disciplina disciplina3 = new Disciplina();
@@ -31,6 +33,8 @@ public class Aplicacao {
 		Turma turma5 = new Turma();
 		Turma turma6 = new Turma();
 		Turma turma7 = new Turma();
+		
+		RendimentoEscolar rendimento1 = new RendimentoEscolar();
 		
 		disciplina1.setId(0);
 		disciplina1.setNome("Pensamento Computacional");
@@ -56,20 +60,38 @@ public class Aplicacao {
 		professor2.setNomeUsuario("Felipe");
 		professor2.setSenha("14236");
 		
+		aluno1.setId(0);
+		aluno1.setNome("Rubson Hebrain de Lima Freire");
+		aluno1.setPeriodo(5);
+		aluno1.setNomeUsuario("Rubson");
+		aluno1.setSenha("1234567");
+		
+		aluno2.setId(1);
+		aluno2.setNome("Jaime Cavalcanti de Souza Junior");
+		aluno2.setPeriodo(4);
+		aluno2.setNomeUsuario("Jaime");
+		aluno2.setSenha("3452649");
+		
 		turma1.setId(0);
 		turma1.setDisciplina(disciplina1);
 		turma1.setProfessor(professor1);
 		turma1.setCapacidadeTurma(30);
+		turma1.setAluno(aluno1);
+		turma1.setAluno(aluno2);
 		
 		turma2.setId(1);
 		turma2.setDisciplina(disciplina2);
 		turma2.setProfessor(professor1);
 		turma2.setCapacidadeTurma(50);
+		turma2.setAluno(aluno1);
+		turma2.setAluno(aluno2);
 		
 		turma3.setId(2);
 		turma3.setDisciplina(disciplina3);
 		turma3.setProfessor(professor1);
 		turma3.setCapacidadeTurma(49);
+		turma3.setAluno(aluno1);
+		turma3.setAluno(aluno2);
 		
 		turma4.setId(3);
 		turma4.setDisciplina(disciplina1);
@@ -86,6 +108,19 @@ public class Aplicacao {
 		turma6.setProfessor(professor2);
 		turma6.setCapacidadeTurma(35);
 		
+		rendimento1.setAluno(turma1.getAluno(0));
+		rendimento1.setTrabalhos("Lista de Exercícios 01");
+		rendimento1.setNotasTrabalhos(9);
+		rendimento1.setTrabalhos("Lista de Exercícios 02");
+		rendimento1.setNotasTrabalhos(5);
+		rendimento1.setTrabalhos("Lista de Exerícios 03");
+		rendimento1.setNotasTrabalhos(7);
+		rendimento1.setTrabalhos("Lista de Exercícios 04");
+		rendimento1.setNotasTrabalhos(8);
+		rendimento1.setTurma(turma1);
+		rendimento1.setNotaVA1(8);
+		rendimento1.setNotaVA2(9);
+		
 		Fachada.getInstance().cadastrarDisciplina(disciplina1);
 		Fachada.getInstance().cadastrarDisciplina(disciplina2);
 		Fachada.getInstance().cadastrarDisciplina(disciplina3);
@@ -99,6 +134,10 @@ public class Aplicacao {
 		Fachada.getInstance().cadastrarTurma(turma5);
 		Fachada.getInstance().cadastrarTurma(turma6);
 		Fachada.getInstance().cadastrarTurma(turma7); //Turma Inexistente
+		
+		Fachada.getInstance().cadastrarRendimento(rendimento1);
+		
+		
 		
 		try {
 			System.out.println(Fachada.getInstance().procurarDisciplina("Pensamento Computacional"));
@@ -170,6 +209,12 @@ public class Aplicacao {
 			//e.printStackTrace();
 		}
 		
+		try {
+			System.out.println(Fachada.getInstance().procurarRendimento(0));
+		} catch (RendimentoEscolarInexistenteException e) {
+			System.out.println("Rendimento Escolar Inexistente!");
+			//e.printStackTrace();
+		}
+		
 	}
-
 }

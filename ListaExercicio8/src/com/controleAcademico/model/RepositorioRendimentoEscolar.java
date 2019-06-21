@@ -6,7 +6,7 @@ public interface RepositorioRendimentoEscolar {
 	
 	public void inserir(RendimentoEscolar rendimento);
 	public void remover(String nomeRendimento);
-	public RendimentoEscolar procurar(String nomeRendimento);
+	public RendimentoEscolar procurar(int idAluno);
 	public void atualizar(RendimentoEscolar rendimento);
 
 }
