@@ -106,18 +106,53 @@ public class AreaAdministrador extends JFrame {
 		contentPane.add(lblTurmas);
 		
 		JButton btnCadastrarTurmas = new JButton("CADASTRAR");
+		btnCadastrarTurmas.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				AreaCadastroTurmas areaCadastroTurmas = new AreaCadastroTurmas();
+				
+				areaCadastroTurmas.setVisible(true);
+			}
+		});
 		btnCadastrarTurmas.setBounds(246, 107, 106, 23);
 		contentPane.add(btnCadastrarTurmas);
 		
 		JButton btnRemoverTurmas = new JButton("REMOVER");
+		btnRemoverTurmas.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				AreaRemocaoTurmas areaRemocaoTurmas = new AreaRemocaoTurmas();
+				
+				areaRemocaoTurmas.setVisible(true);
+				
+			}
+		});
 		btnRemoverTurmas.setBounds(246, 141, 106, 23);
 		contentPane.add(btnRemoverTurmas);
 		
 		JButton btnConsultarTurmas = new JButton("CONSULTAR");
+		btnConsultarTurmas.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				AreaConsultaTurmas areaConsultaTurma = new AreaConsultaTurmas();
+				
+				areaConsultaTurma.setVisible(true);
+				
+			}
+		});
 		btnConsultarTurmas.setBounds(246, 175, 106, 23);
 		contentPane.add(btnConsultarTurmas);
 		
 		JButton btnListarTurmas = new JButton("LISTAR");
+		btnListarTurmas.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				AreaListaTurmas areaListaTurmas = new AreaListaTurmas();
+				
+				areaListaTurmas.setVisible(true);
+				
+			}
+		});
 		btnListarTurmas.setBounds(246, 209, 106, 23);
 		contentPane.add(btnListarTurmas);
 		
@@ -127,18 +162,55 @@ public class AreaAdministrador extends JFrame {
 		contentPane.add(lblAlunos);
 		
 		JButton btnCadastrarAlunos = new JButton("CADASTRAR");
+		btnCadastrarAlunos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				AreaCadastroAlunos areaCadastroAlunos = new AreaCadastroAlunos();
+				
+				areaCadastroAlunos.setVisible(true);
+				
+			}
+		});
 		btnCadastrarAlunos.setBounds(403, 107, 106, 23);
 		contentPane.add(btnCadastrarAlunos);
 		
 		JButton btnRemoverAlunos = new JButton("REMOVER");
+		btnRemoverAlunos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				AreaRemocaoAlunos areaRemocaoAlunos = new AreaRemocaoAlunos();
+				
+				areaRemocaoAlunos.setVisible(true);
+				
+			}
+		});
 		btnRemoverAlunos.setBounds(403, 141, 106, 23);
 		contentPane.add(btnRemoverAlunos);
 		
 		JButton btnConsultarAlunos = new JButton("CONSULTAR");
+		btnConsultarAlunos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				AreaConsultaAlunos areaConsultaAlunos = new AreaConsultaAlunos();
+				
+				areaConsultaAlunos.setVisible(true);
+				
+				
+			}
+		});
 		btnConsultarAlunos.setBounds(403, 175, 106, 23);
 		contentPane.add(btnConsultarAlunos);
 		
 		JButton btnListarAlunos = new JButton("LISTAR");
+		btnListarAlunos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				AreaListaAlunos areaListaAlunos = new AreaListaAlunos();
+				
+				areaListaAlunos.setVisible(true);
+				
+			}
+		});
 		btnListarAlunos.setBounds(403, 209, 106, 23);
 		contentPane.add(btnListarAlunos);
 		
@@ -148,14 +220,42 @@ public class AreaAdministrador extends JFrame {
 		contentPane.add(lblProfessores);
 		
 		JButton btnRemoverProfessores = new JButton("REMOVER");
+		btnRemoverProfessores.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				AreaRemocaoProfessores areaRemocaoProfessores = new AreaRemocaoProfessores();
+				
+				areaRemocaoProfessores.setVisible(true);
+				
+				
+			}
+		});
 		btnRemoverProfessores.setBounds(569, 107, 123, 23);
 		contentPane.add(btnRemoverProfessores);
 		
 		JButton btnConsultarProfessores = new JButton("CONSULTAR");
+		btnConsultarProfessores.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				AreaConsultaProfessores areaConsultaProfessores = new AreaConsultaProfessores();
+				
+				areaConsultaProfessores.setVisible(true);				
+				
+			}
+		});
 		btnConsultarProfessores.setBounds(569, 141, 123, 23);
 		contentPane.add(btnConsultarProfessores);
 		
 		JButton btnListarProfessores = new JButton("LISTAR");
+		btnListarProfessores.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				AreaListaProfessores areaListaProfessores = new AreaListaProfessores();
+				
+				areaListaProfessores.setVisible(true);
+				
+			}
+		});
 		btnListarProfessores.setBounds(569, 175, 123, 23);
 		contentPane.add(btnListarProfessores);
 		
@@ -165,14 +265,42 @@ public class AreaAdministrador extends JFrame {
 		contentPane.add(lblRendimentoEscolar);
 		
 		JButton btnRemoverRendimentos = new JButton("REMOVER");
+		btnRemoverRendimentos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				AreaRemocaoRendimentosEscolar areaRemocaoRendimentosEscolar = new AreaRemocaoRendimentosEscolar();
+				
+				areaRemocaoRendimentosEscolar.setVisible(true);
+				
+				
+			}
+		});
 		btnRemoverRendimentos.setBounds(821, 107, 113, 23);
 		contentPane.add(btnRemoverRendimentos);
 		
 		JButton btnConsultarRendimentos = new JButton("CONSULTAR");
+		btnConsultarRendimentos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				AreaConsultaRendimentosEscolar areaConsultaRendimentosEscolar = new AreaConsultaRendimentosEscolar();
+				
+				areaConsultaRendimentosEscolar.setVisible(true);
+				
+			}
+		});
 		btnConsultarRendimentos.setBounds(821, 141, 113, 23);
 		contentPane.add(btnConsultarRendimentos);
 		
 		JButton btnListarRendimentos = new JButton("LISTAR");
+		btnListarRendimentos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				AreaListaRendimentosEscolar areaListaRendimentosEscolar = new AreaListaRendimentosEscolar();
+				
+				areaListaRendimentosEscolar.setVisible(true);
+				
+			}
+		});
 		btnListarRendimentos.setBounds(821, 175, 113, 23);
 		contentPane.add(btnListarRendimentos);
 	}
